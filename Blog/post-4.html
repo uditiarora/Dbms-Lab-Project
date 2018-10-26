@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width" />
+      <title>Blogs | CourseSpot
+      </title>
+      <meta name="description" content="Read Education Related BLogs for free"/>
+      <meta name="keywords" content="free, responsive, blog, education, web site"/>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <!-- CUSTOM STYLE -->       
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/template-style.css">
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+      <script type="text/javascript" src="js/modernizr.js"></script>
+      <script type="text/javascript" src="js/responsee.js"></script>          
+      <!--[if lt IE 9]> 
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+      <![endif]-->     
+   </head>
+   <body class="size-1140">
+      <!-- TOP NAV WITH LOGO -->          
+      <header class="margin-bottom">
+         <div class="line">
+            <nav>
+               <div class="top-nav">
+                  <p class="nav-text"></p>
+                  <a class="logo" href="index.html">            
+                  CourseSpot<span>Blog</span>
+                  </a>            
+                  <ul class="top-ul right">
+                     <li>            
+                        <a href="index.html">Blog</a>            
+                     </li>
+                     <li>            
+                        <a href="about.html">About</a>            
+                     </li>
+                     <li>            
+                        <a href="archive.html">Archive</a>            
+                     </li>
+                     <li>            
+                        <a href="contact.html">Contact</a>            
+                     </li>
+                     <div class="social right">	           
+                        <a target="_blank" href="#">
+                        <i class="icon-facebook_circle icon2x"></i>
+                        </a>          
+                        <a target="_blank" href="#">
+                        <i class="icon-twitter_circle icon2x"></i>
+                        </a>          
+                     </div>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- MAIN SECTION -->                  
+      <section id="article-section" class="line">
+         <div class="margin">
+            <!-- ARTICLES -->             
+            <div class="s-12 l-9">
+               <!-- ARTICLE 1 -->               
+               <article class="margin-bottom">
+                  <div class="post-4 line">
+                     <!-- image -->                 
+                     <div class="s-12 l-11 post-image">                   
+                        <img src="img/post4-big.jpg" alt="Fashion">              
+                     </div>
+                     <!-- date -->                 
+                     <div class="s-12 l-1 post-date">
+                        <p class="date">01</p>
+                        <p class="month">mar</p>
+                     </div>
+                  </div>
+                  <!-- text -->                 
+                  <div class="post-text">
+                     <h1>Dynamic programming and everything you need to know about it</h1>
+                     <p>
+                        If you are trying to make it big as a coder, you’ve probably been advised by coding Gurus (more times than you can count) that mastering Dynamic Programming (DP) is a must. Don’t cower already, it’s not rocket science! It just needs a little patience and dedication on your part to learn and master Dynamic Programming.
+
+ 
+
+And that’s precisely why we’re here to guide you through the concept of DP!
+
+ 
+
+First, let’s start with the fundamental question.
+
+ 
+
+What Is Dynamic Programming?
+
+ 
+
+Developed by Richard Bellman way back in the 1950s, Dynamic Programming is a combination of computer programming and mathematical optimization aimed to avoid repetitions. Essentially, DP focuses on breaking down an optimization problem into smaller fragments of simpler sub-problems and stores the solution of all the subproblems. Thus, by remembering the partial results of these subproblems, Dynamic Programming can help avoid coders and programmers to avoid repetitions within their code. Unlike the naive approach that takes up a significant amount of time, DP allows you to solve an array of programming problems in O(n2) or O(n3) time.
+
+ 
+
+Still confused? Jonathan Paulson answer will definitely demystify Dynamic Programming for you with this Quora answer.
+
+ 
+
+Now, let’s talk about another crucial aspect of DP – Patterns!
+
+ 
+
+When talking about DP, it is essential that you learn to recognize the common patterns of coding problems so that you can leverage those patterns to solve other similar problems. Let’s take the example of a coin change problem:
+
+ 
+
+You have n types of coin denominations bearing values C1 < C2 < … < Cn (all integers). Assume C(1) = 1 to make changes for any amount of money (M). Create an algorithm to get the minimal number of coins that make change for an amount of money M.
+
+So, what approach should you take in solving this problem? In four simple steps, we’ll show you how!
+
+ 
+
+Problem & Subproblem
+ 
+
+When a problem is given to you, first you have to check whether or not it is suitable for dynamic programming. And how do you do that? By seeing if it is possible to break down the problem into smaller subproblems.
+
+ 
+
+If you see the coin problem closely, you’ll find that it is quite similar to Fibonacci. Here, you can see that a subproblem is capable of making changes for a smaller value. So, by determining the minimal number of coins needed for all the values < M (1, 2, 3, … M – 1), we can find the answer for M simply by determining the best possible combination of them. In this light, we find that the solutions for subproblems of this problem can help to find the solution for the primary problem and hence, dynamic programming is worth a shot here.
+
+ 
+
+Identify The Formula
+ 
+
+Once you’ve recognized that the problem can be broken down into subproblems, you must now determine how the subproblems can help in solving the primary problem by applying the relevant formula.
+
+ 
+
+For the given coin change problem, let’s assume that F(m) indicates the minimum number of coins required to make M. So, we need to determine how to indicate F(m) using values less than M. Suppose C1 is needed, then F(m) = F(m – C1) + 1 to find out how many coins are required to make [m-C1].
+
+ 
+
+As we do not know which value is exactly required (from C1 to Cn), we must iterate all the values. So, the formula will be as follows:
+
+ 
+
+F(m) = min(F(m – Ci)) + 1, for i = 1 … n
+
+ 
+
+The formula denotes that we need to iterate all the solutions for [m-Ci] to find the minimal value.
+
+ 
+
+Memoization
+ 
+
+Memoization is pivotal in DP. Why so? If you merely implement the formula, you will find that to calculate F(m), the code will calculate a bunch of subproblems of F(m – Ci), whereas to calculate F(m – Ci), it will further calculate the sub-subproblem. The chain will continue and hence, the code might end up calculating many subproblems or sub-subproblems more than once. This is where memoization is helpful. Through memoization, you can store results of the subproblems/sub-subproblems so the next time you need to solve those, you can directly use the results.
+
+ 
+
+To save the results of a subproblem, you must create an identifier for it. So, an array memory can be created as [m + 1]  and for the subproblem F(m – Ci), you can store the result to memory [m – Ci] for solving future problems.
+
+ 
+
+Implementation
+ 
+
+Implementation becomes easier and more convenient when you break it down into smaller fragments. This allows you to follow the same to solve similar questions. Here’s how you should go about the implementation process:
+
+ 
+
+Initialize memoization and define the array memory [m + 1].
+See if the problem has been solved using the memory. If yes, revert to the result directly.
+Now, implement the formula and save the result to memory.
+While these four steps basically sum up the top-down approach, that is, we solve the primary problem by breaking it down into subproblems, there’s another approach to DP – bottom-up. Unlike the top-down approach, the bottom-up approach doesn’t use recursion but begins with subproblems and moves up towards the primary problem.
+
+So, that’s Dynamic Programming simplified for you! Have any doubts? Drop them in the comments below!
+
+ 
+                     </p>
+                     <br>
+                                          <p class="author">CourseSpot Team</p>
+                  </div>
+               </article>
+               <!-- AD REGION -->
+               <div class="line">
+                  <div class="advertising horizontal">
+                     <img src="img/banner-horizontal.jpg" alt="ad banner">        
+                  </div>
+               </div>
+            </div>
+            <!-- SIDEBAR -->             
+            <!-- SIDEBAR -->             
+            <div class="s-12 l-3">
+               <aside>
+                  <!-- NEWS 1 -->           
+                  <img src="img/news1.jpg" alt="News 1">          
+                  <div class="aside-block margin-bottom">
+                     <h3>An Inspiring Story</h3>
+                     <p>XYZ felt trapped. She was well-educated, with a BS in Computer Applications, but she didn’t enjoy her work. She felt drawn to other fields, particularly finance, but wasn’t sure if she could commit to a Master’s Degree – until she discovered the Introduction to Finance Specialization from the University of Michigan on Coursera. Here’s her story:
+
+After completing my Bachelor’s in Computer Application in 2012, I felt pigeonholed into a particular field of study.
+
+I decided to get a little more background knowledge by taking a finance course from the University of Michigan on CoursSpot.
+That course ended up being a turning point in my life. I learned that finance isn’t just a set of tools, but a way of thinking – and I learned that I definitely wanted to pursue a career in this field. Today, I have worked a year in the largest commercial bank in India, and I am pursuing my Masters in Finance from Mumbai University.
+
+</p>
+                  </div>
+                  <!-- AD REGION --> 
+                  <div class="advertising margin-bottom">
+                     <img src="img/banner.jpg" alt="ad banner">         
+                  </div>
+                  <!-- LATEST POSTS -->
+                  <div class="aside-block margin-bottom">
+                     <h3>Latest posts</h3>
+                     <a class="latest-posts" href="post-1.html">
+                        <h5>Why Procrastinators Procrastinate</h5>
+                        <p>
+                           Who would have thought that after decades of struggle with procrastination, the dictionary, of all places, would hold the solution. 
+                        </p>
+                     </a>
+                     <a class="latest-posts" href="post-2.html">
+                        <h5>Why learn MEAN Stack?</h5>
+                        <p>
+                           But WHY? Why is every Startup founder looking for a MEAN Stack developer? We thought about sharing this with our developers community….
+                        </p>
+                     </a>
+                     <a class="latest-posts" href="post-3.html">
+                        <h5>Why You Need To Learn Python</h5>
+                        <p>
+                          If you love coding, you must be agreeing with the statement that programming, as an intellectual activity, is the only form of art that lets you create interactive art...
+                        </p>
+                     </a>
+                     <a class="latest-posts" href="post-4.html">
+                        <h5>Dynamic programming</h5>
+                        <p>
+Dynamic programming and everything you need to know about it...                        </p>
+                     </a>
+                     <a class="latest-posts" href="post-5.html">
+                        <h5>And again - We are here for you</h5>
+                        <p>
+                           We are always here for you to help you learn all the latest technologies in town...
+                        </p>
+                     </a>
+                  </div>
+               </aside>
+            </div>
+         </div>
+      </section>
+      <!-- FOOTER -->       
+      <div class="line">
+         <footer>
+            <div class="s-12 l-8">
+               <p>
+                  Copyright 2015,<br>
+               
+               </p>
+            </div>
+            <div class="s-12 l-4">                                 
+               <a class="right" href="#" title="Responsive framework">Design and coding<br>
+               by CourseSpot
+               </a>                       
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
